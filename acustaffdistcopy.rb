@@ -337,25 +337,19 @@ Shoes.app :height=> 500, :width=> 500, :resizeable => false, :title=> "AcuStaff"
 		    edit_line(:width => 65, :right => 1108, :top => top)
 			           .text = "#{room_number}   #{$acuity[room_number]}%"
 		  end
-
-          #West 3
-          @rm6626 = edit_line :width => 65, :right => 1040, :top => 640
-          @rm6626.text = "6626   #{$acuity[6626]}%"
-          @rm6627 = edit_line :width => 65, :right => 960, :top => 640
-          @rm6627.text = "6627   #{$acuity[6627]}%"
-          @rm6628 = edit_line :width => 65, :right => 870, :top => 640
-          @rm6628.text = "6628   #{$acuity[6628]}%"
-          @rm6629 = edit_line :width => 65, :right => 780, :top => 640
-          @rm6629.text = "6629   #{$acuity[6629]}%"
-          @rm6630 = edit_line :width => 65, :right => 690, :top => 640
-          @rm6630.text = "6630   #{$acuity[6630]}%"
-          @rm6631 = edit_line :width => 65, :right => 600, :top => 640
-          @rm6631.text = "6631   #{$acuity[6631]}%"
-          @rm6632 = edit_line :width => 65, :right => 510, :top => 640
-          @rm6632.text = "6632   #{$acuity[6632]}%"
-
-
-
+      
+      #West 3
+      7.times do |i|
+        right = if i == 0
+                  1040
+                else
+                  1050 - i * 90
+                end
+        room_number = 6626 + i
+        edit_line(:width => 65, :right => right, :top => 640)
+                 .text = "#{room_number}   #{$acuity[room_number]}%"
+      end
+      
           #6601----------------------------------------------------------
           if $acuity[6601] >= 80 then
             oval(
