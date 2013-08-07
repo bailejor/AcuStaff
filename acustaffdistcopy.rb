@@ -304,23 +304,19 @@ Shoes.app :height=> 500, :width=> 500, :resizeable => false, :title=> "AcuStaff"
           @rm6611.text = "6611   #{$acuity[6611]}%"
 
           #North 3-----------------------------------------------------------------------
-          @rm6612 = edit_line :width => 65, :left => 630, :top => 90
-          @rm6612.text = "6612   #{$acuity[6612]}%"
-          @rm6613 = edit_line :width => 65, :left => 630, :top => 140
-          @rm6613.text = "6613   #{$acuity[6613]}%"
-          @rm6614 = edit_line :width => 65, :left => 630, :top => 190
-          @rm6614.text = "6614   #{$acuity[6614]}%"
-          @rm6615 = edit_line :width => 65, :left => 630, :top => 240
-          @rm6615.text = "6615   #{$acuity[6615]}%"
-          @rm6616 = edit_line :width => 65, :left => 630, :top => 290
-          @rm6616.text = "6616   #{$acuity[6616]}%"
-
+          5.times do |i|
+            top = 90 + i * 50
+            room_number = 6612 + i
+          edit_line(:width => 65, :left => 630, :top => top)
+                    .text = "#{room_number}   #{$acuity[room_number]}%"
+          end
+          
           #West 1
 		  6.times do |i|
 		    right = 600 + i * 90
 			room_number = 6617 + i
-			a = edit_line :width => 65, :right => right, :top => 410
-			a.text = "#{room_number}   #{$acuity[room_number]}%"
+			edit_line(:width => 65, :right => right, :top => 410)
+			         .text = "#{room_number}   #{$acuity[room_number]}%"
 		  end
 
           #North 2
