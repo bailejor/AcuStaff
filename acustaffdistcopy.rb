@@ -316,18 +316,12 @@ Shoes.app :height=> 500, :width=> 500, :resizeable => false, :title=> "AcuStaff"
           @rm6616.text = "6616   #{$acuity[6616]}%"
 
           #West 1
-          @rm6617 = edit_line :width => 65, :right => 600, :top => 410
-          @rm6617.text = "6617   #{$acuity[6617]}%"
-          @rm6618 = edit_line :width => 65, :right => 690, :top => 410
-          @rm6618.text = "6618   #{$acuity[6618]}%"
-          @rm6619 = edit_line :width => 65, :right => 780, :top => 410
-          @rm6619.text = "6619   #{$acuity[6619]}%"
-          @rm6620 = edit_line :width => 65, :right => 870, :top => 410
-          @rm6620.text = "6620   #{$acuity[6620]}%"
-          @rm6621 = edit_line :width => 65, :right => 960, :top => 410
-          @rm6621.text = "6621   #{$acuity[6621]}%"
-          @rm6622 = edit_line :width => 65, :right => 1040, :top => 410
-          @rm6622.text = "6622   #{$acuity[6622]}%"
+		  6.times do |i|
+		    right = 600 + i * 90
+			room_number = 6617 + i
+			a = edit_line :width => 65, :right => right, :top => 410
+			a.text = "#{room_number}   #{$acuity[room_number]}%"
+		  end
 
           #North 2
           @rm6623 = edit_line :width => 65, :right => 1110, :top => 470
