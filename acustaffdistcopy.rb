@@ -324,13 +324,19 @@ Shoes.app :height=> 500, :width=> 500, :resizeable => false, :title=> "AcuStaff"
 		  end
 
           #North 2
-          @rm6623 = edit_line :width => 65, :right => 1110, :top => 470
-          @rm6623.text = "6623   #{$acuity[6623]}%"
-          @rm6624 = edit_line :width => 65, :right => 1110, :top => 570
-          @rm6624.text = "6624   #{$acuity[6624]}%"
-          @rm6625 = edit_line :width => 65, :right => 1108, :top => 630
-          @rm6625.text = "6625   #{$acuity[6625]}%"
-
+		  3.times do |i|
+		    top = case i
+				      when 0
+				      	470
+				      when 1
+				      	570
+				      when 2
+				      	630
+				      end
+			  room_number = 6623 + i
+		    edit_line(:width => 65, :right => 1108, :top => top)
+			           .text = "#{room_number}   #{$acuity[room_number]}%"
+		  end
 
           #West 3
           @rm6626 = edit_line :width => 65, :right => 1040, :top => 640
