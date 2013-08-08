@@ -1,6 +1,4 @@
-Shoes.app :height=> 500, :width=> 500, :resizeable => false, :title=> "AcuStaff" do
-  #Open shoes, set window name and size--------------------------------------
-
+def build_header
   stack :width=> "100%", :height=> "20%" do
     background "#EFC"
     border(
@@ -17,11 +15,12 @@ Shoes.app :height=> 500, :width=> 500, :resizeable => false, :title=> "AcuStaff"
 	
 	$acuity = Hash.new {0}
   end
-  #End of top portion-----------------------------------------------------
+end
 
-
-
-
+Shoes.app :height=> 500, :width=> 500, :resizeable => false, :title=> "AcuStaff" do
+  #Open shoes, set window name and size--------------------------------------
+  
+  build_header
 
   #Left side stack and flow-------------------------------------------------
   stack :width=> 270 do
