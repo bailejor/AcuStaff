@@ -291,18 +291,20 @@ Shoes.app :height=> 500, :width=> 500, :resizeable => false, :title=> "AcuStaff"
           #North 2--------------------------------------------------------------->
           #---------------------------------------------------------------------->
           #---------------------------------------------------------------------->
-
-
-
-          @rm6609 = edit_line :width => 65, :left => 825, :top => 10
-          @rm6609.text = "6609   #{$acuity[6609]}%"
-
-          @rm6610 = edit_line :width => 65, :left => 715, :top => 10
-          @rm6610.text = "6610   #{$acuity[6610]}%"
-
-          @rm6611 = edit_line :width => 65, :left => 635, :top => 10
-          @rm6611.text = "6611   #{$acuity[6611]}%"
-
+		  3.times do |i|
+		    left = case i
+				      when 0
+				      	825
+				      when 1
+				      	715
+				      when 2
+				      	635
+				      end
+			  room_number = 6609 + i
+		    edit_line(:width => 65, :left => left, :top => 10)
+			           .text = "#{room_number}   #{$acuity[room_number]}%"
+		  end
+      
           #North 3-----------------------------------------------------------------------
           5.times do |i|
             top = 90 + i * 50
