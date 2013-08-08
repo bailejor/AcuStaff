@@ -319,7 +319,7 @@ Shoes.app :height=> 500, :width=> 500, :resizeable => false, :title=> "AcuStaff"
 			         .text = "#{room_number}   #{$acuity[room_number]}%"
 		  end
 
-          #North 2
+          #West 2
 		  3.times do |i|
 		    top = case i
 				      when 0
